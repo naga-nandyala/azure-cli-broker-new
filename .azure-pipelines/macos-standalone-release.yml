@@ -52,7 +52,7 @@ parameters:
   - name: GitHubServiceConnection
     displayName: 'GitHub Service Connection'
     type: string
-    default: 'Azure'
+    default: 'github.com_naga-nandyala'
   
   - name: ESRPServiceConnection
     displayName: 'ESRP Service Connection'
