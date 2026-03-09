@@ -19,7 +19,7 @@ azure-keyvault-secrets==4.7.0
 azure-keyvault-securitydomain==1.0.0b1
 azure-mgmt-advisor==9.0.0
 azure-mgmt-apimanagement==4.0.0
-azure-mgmt-appconfiguration==5.0.0
+azure-mgmt-appconfiguration==6.0.0b1
 azure-mgmt-appcontainers==2.0.0
 azure-mgmt-applicationinsights==1.0.0
 azure-mgmt-authorization==5.0.0b1
@@ -109,9 +109,7 @@ jmespath==0.9.5
 jsondiff==2.0.0
 knack==0.11.0
 msal-extensions==1.2.0
-# macOS/Darwin: standard msal without broker support. (this is for homebrew-core parallel run for next few months).
-# For broker support, use requirements.py3.MacOS.txt
-msal==1.35.0b1
+msal[broker]==1.35.0b1
 msrest==0.7.1
 oauthlib==3.2.2
 packaging==25.0
