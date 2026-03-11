@@ -69,7 +69,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
 SRC_DIR = PROJECT_ROOT / "src"
 AZURE_CLI_CORE_DIR = SRC_DIR / "azure-cli-core"
-REQUIREMENTS_FILE = SRC_DIR / "azure-cli" / "requirements.py3.Darwin.txt"
+REQUIREMENTS_FILE = SRC_DIR / "azure-cli" / "requirements.py3.MacOS.txt"
 
 # Package configuration
 APP_NAME = "azure-cli"
