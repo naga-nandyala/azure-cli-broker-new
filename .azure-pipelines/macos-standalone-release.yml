@@ -74,7 +74,7 @@ resources:
 
 variables:
   - template: templates/variables.yml
-  - ${{ if ne(variables['System.TeamProject'], 'public') }}:
+  - ${{ if eq(variables['System.TeamProject'], 'release') }}:
     - group: 'AME ESRP Variable Group'
   
   - name: GitHubRepo
@@ -123,7 +123,7 @@ jobs:
 # ============================================================================
 # PHASE 2: SIGN & NOTARIZE (via ESRP)
 # ============================================================================
-- ${{ if ne(variables['System.TeamProject'], 'public') }}:
+- ${{ if eq(variables['System.TeamProject'], 'release') }}:
   - template: templates/macos/macos-sign-notarize-jobs.yml
     parameters:
       BundleId: ${{ parameters.BundleId }}
@@ -146,7 +146,7 @@ jobs:
 # ============================================================================
 # PHASE 3a: TEST (local file:// cask + offline install)
 # ============================================================================
-- ${{ if ne(variables['System.TeamProject'], 'public') }}:
+- ${{ if eq(variables['System.TeamProject'], 'release') }}:
   - template: templates/macos/macos-cask-generation-and-tests.yml
     parameters:
       MacosArm64Image: ${{ variables.macos_arm64_pool }}
@@ -164,7 +164,7 @@ jobs:
 # ============================================================================
 # PHASE 3b: PUBLISH (GitHub + Homebrew tap)
 # ============================================================================
-- ${{ if ne(variables['System.TeamProject'], 'public') }}:
+- ${{ if eq(variables['System.TeamProject'], 'release') }}:
   - template: templates/macos/macos-publish-jobs.yml
     parameters:
       PublishToGitHub: ${{ parameters.PublishToGitHub }}
