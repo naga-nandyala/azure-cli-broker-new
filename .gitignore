@@ -123,3 +123,4 @@ cmd_coverage/*
 
 # Ignore test results
 test_results.xml
+.venv*
